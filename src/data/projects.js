@@ -32,7 +32,7 @@ const projects = [
       en: 'A bilingual, responsive professional portfolio website built to present my background, projects and contacts.',
     },
     technologies: ['React', 'Vite', 'Material UI', 'EmailJS'],
-    github: 'https://github.com/ViniRSales/portfolio',
+    github: 'https://github.com/ViniRSales/Vinicius_Ramos_Sales_Portfolio',
     image: '/images/projeto-3.png',
   },
 ]
