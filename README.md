@@ -1,10 +1,10 @@
-# Portfólio Profissional — Vinicius
+# Portfólio Profissional — Vinicius Ramos Sales
 
 Website de portfólio profissional para apresentar minha trajetória, projetos, experiências e formas de contato, de maneira moderna, responsiva e bilíngue (PT/EN).
 
 > Trabalho do **Laboratório 01** da disciplina **DIAW** (Desenvolvimento e Integração de Aplicações Web) — Engenharia de Software, PUC Minas.
 
-🔗 **Site publicado:** _[EDITAR: cole aqui o link da Vercel/Render quando fizer o deploy]_
+🔗 **Site publicado:** [https://vinicius-ramos-sales-portfolio.vercel.app](https://vinicius-ramos-sales-portfolio.vercel.app)
 
 ## Sumário
 
@@ -17,6 +17,7 @@ Website de portfólio profissional para apresentar minha trajetória, projetos, 
 - [Configurando o envio de e-mail (EmailJS)](#configurando-o-envio-de-e-mail-emailjs)
 - [Como personalizar o conteúdo](#como-personalizar-o-conteúdo)
 - [Deploy](#deploy)
+- [Autor](#autor)
 
 ## Funcionalidades
 
@@ -28,7 +29,7 @@ Website de portfólio profissional para apresentar minha trajetória, projetos, 
 
 ## Protótipos (wireframes)
 
-Wireframes de média fidelidade feitos no Figma:
+Wireframes das quatro páginas, feitos no Figma:
 
 | Sobre Mim | Projetos |
 |---|---|
@@ -46,7 +47,7 @@ Wireframes de média fidelidade feitos no Figma:
 - [React Router](https://reactrouter.com/) — navegação entre as páginas
 - [EmailJS](https://www.emailjs.com/) — envio de e-mail direto do front-end
 - [Figma](https://www.figma.com/) — wireframes
-- [Vercel](https://vercel.com/) — hospedagem
+- [Vercel](https://vercel.com/) — hospedagem (plano gratuito)
 - Git e GitHub — versionamento
 
 ## Dependências
@@ -64,19 +65,19 @@ Wireframes de média fidelidade feitos no Figma:
 ## Estrutura de diretórios
 
 ```
-portfolio/
+Vinicius_Ramos_Sales_Portfolio/
 ├── docs/wireframes/        # Wireframes das 4 páginas
 ├── public/
 │   ├── favicon.svg
 │   └── images/             # Foto e imagens/GIFs dos projetos
 ├── src/
 │   ├── components/         # Header, Footer, Layout, ImageWithFallback
-│   ├── data/               # SEU CONTEÚDO: profile.js, projects.js, experiences.js
+│   ├── data/               # Conteúdo: profile.js, projects.js, experiences.js
 │   ├── i18n/               # Idiomas (PT/EN): translations.js e LanguageContext.jsx
 │   ├── pages/              # About, Projects, Experiences, Contact
 │   ├── App.jsx             # Definição das rotas
 │   ├── main.jsx            # Ponto de entrada
-│   └── theme.js            # Cores e tipografia
+│   └── theme.js            # Cores e tipografia (tons de azul)
 ├── .env.example            # Modelo das variáveis do EmailJS
 ├── index.html
 ├── package.json
@@ -90,8 +91,8 @@ Pré-requisito: [Node.js](https://nodejs.org/) instalado.
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/SEU-USUARIO/portfolio.git
-cd portfolio
+git clone https://github.com/ViniRSales/Vinicius_Ramos_Sales_Portfolio.git
+cd Vinicius_Ramos_Sales_Portfolio
 
 # 2. Instale as dependências
 npm install
@@ -110,10 +111,10 @@ Outros comandos: `npm run build` (gera a versão de produção em `dist/`) e `np
 ## Configurando o envio de e-mail (EmailJS)
 
 1. Crie uma conta gratuita em [emailjs.com](https://www.emailjs.com/).
-2. Em **Email Services**, conecte o seu e-mail e anote o **Service ID**.
-3. Em **Email Templates**, crie um template usando estas variáveis no corpo: `{{name}}`, `{{email}}` e `{{message}}`. Em "To Email", coloque o e-mail que vai receber as mensagens; em "Reply To", use `{{email}}`. Anote o **Template ID**.
+2. Em **Email Services**, conecte o seu e-mail (no Gmail, autorize a permissão de envio) e anote o **Service ID**.
+3. Em **Email Templates**, crie um template com as variáveis `{{name}}`, `{{email}}` e `{{message}}` no corpo. Em "To Email", coloque o e-mail que vai receber as mensagens; em "Reply To", use `{{email}}`. Anote o **Template ID**.
 4. Em **Account**, copie a **Public Key**.
-5. Preencha o arquivo `.env`:
+5. Preencha o arquivo `.env` na raiz do projeto:
 
 ```
 VITE_EMAILJS_SERVICE_ID=seu_service_id
@@ -121,21 +122,29 @@ VITE_EMAILJS_TEMPLATE_ID=seu_template_id
 VITE_EMAILJS_PUBLIC_KEY=sua_public_key
 ```
 
-O arquivo `.env` não vai para o GitHub. Na Vercel, cadastre as mesmas três variáveis em **Settings → Environment Variables**.
+O arquivo `.env` não vai para o GitHub. Depois de editá-lo, reinicie o `npm run dev`. Na Vercel, cadastre as mesmas três variáveis em **Settings → Environment Variables** e faça um novo deploy.
 
 ## Como personalizar o conteúdo
 
-Todo o conteúdo fica em `src/data/` (procure por `[EDITAR]`):
+Todo o conteúdo fica em `src/data/`:
 
 - `profile.js`: nome, contatos, foto e textos da página Sobre Mim (em PT e EN).
-- `projects.js`: lista de projetos. Coloque as imagens/GIFs em `public/images/`.
+- `projects.js`: lista de projetos. Coloque as imagens/GIFs em `public/images/` e use o mesmo nome no campo `image`.
 - `experiences.js`: lista de experiências.
 
 ## Deploy
 
-O site é publicado na **Vercel** a partir deste repositório:
+O site é publicado na **Vercel**, no plano gratuito (Hobby), a partir deste repositório:
 
 1. Em [vercel.com](https://vercel.com/), clique em **Add New → Project** e importe o repositório.
-2. A Vercel detecta o Vite sozinha (build: `npm run build`, saída: `dist`).
-3. Cadastre as variáveis do EmailJS e clique em **Deploy**.
-4. Cole o link gerado no topo deste README.
+2. Confira: Framework **Vite**, build `npm run build`, saída `dist`.
+3. Cadastre as variáveis `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID` e `VITE_EMAILJS_PUBLIC_KEY` em **Environment Variables** e clique em **Deploy**.
+4. Confira que o endereço de produção abre sem pedir login da Vercel (se pedir, ajuste em **Settings → Deployment Protection**).
+5. A cada `git push` na branch principal, a Vercel publica a nova versão automaticamente.
+
+Site publicado: [https://vinicius-ramos-sales-portfolio.vercel.app](https://vinicius-ramos-sales-portfolio.vercel.app)
+
+## Autor
+
+**Vinicius Ramos Sales** — Estudante de Engenharia de Software, PUC Minas.
+GitHub: [@ViniRSales](https://github.com/ViniRSales)
